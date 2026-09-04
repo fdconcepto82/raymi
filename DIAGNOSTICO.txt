@@ -1,0 +1,23 @@
+RAYMI - WebAR camera diagnostic/fix
+====================================
+
+This build keeps the original Unity/WebGL files and replaces only index.html.
+
+Changes:
+- Removed the duplicate video-canvas element.
+- Fixed camera/video/canvas layering.
+- Made Unity canvas transparent.
+- Requests the iPhone camera during the ALLOW ACCESS click, before Unity starts.
+- Added 1280x960 ideal camera constraints.
+- Prevents the Unity/StartWebcam timing race.
+- Adds clearer console diagnostics.
+- Keeps WorldTracker and the original Build files unchanged.
+
+Deploy:
+1. Replace the contents of your GitHub Pages raymi folder with this ZIP's raymi folder.
+2. Open the HTTPS GitHub Pages URL on the iPhone.
+3. Press ALLOW ACCESS.
+4. The rear camera should become visible.
+5. Once the camera is visible, scan/move over a textured floor and test the 3D object.
+
+If the screen is still black after this version, the next step is to inspect Safari's JavaScript console because the camera/AR initialization is then failing inside the plugin or Unity WebGL runtime.
